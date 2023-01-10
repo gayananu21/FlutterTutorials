@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Flutter Demo",
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -20,8 +21,10 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
           title: Text("Flutter Home"),
           leading: IconButton(
             icon: Icon(Icons.menu),
@@ -40,7 +43,24 @@ class MyHomePage extends StatelessWidget {
           flexibleSpace: Image.asset(
             "assests/blue.jpeg",
             fit: BoxFit.cover,
-          )),
+          ),
+          bottom: const TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.directions_car)),
+              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
+          ),
+          elevation: 2.0,
+        ),
+        body: const TabBarView(
+          children: [
+            Icon(Icons.directions_car),
+            Icon(Icons.directions_transit),
+            Icon(Icons.directions_bike),
+          ],
+        ),
+      ),
     );
   }
 }
