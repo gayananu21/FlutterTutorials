@@ -26,26 +26,15 @@ class MyHomePage extends StatelessWidget {
         title: Text("Flutter tutorial 08"),
       ),
       body: Container(
-        //color: Colors.pink,
+        padding: EdgeInsets.only(top: 100.0, bottom: 100.0),
+        height: 400.0,
         width: double.infinity,
-        height: 100,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Text 01",
-              style: TextStyle(fontSize: 20),
-            ),
-            Text(
-              "Text 02",
-              style: TextStyle(fontSize: 20),
-            ),
-            Text(
-              "Text 03",
-              style: TextStyle(fontSize: 20),
-            ),
-          ],
+        color: Colors.yellow,
+        child: Text(
+          "Flutter tutorial 08",
+          style: TextStyle(
+            fontSize: 20.0,
+          ),
         ),
       ),
     );
